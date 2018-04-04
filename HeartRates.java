@@ -28,6 +28,11 @@ range.
 
 */
 
+import java.time.LocalDate;
+import java.time.Month;
+import java.time.Period;
+import java.time.temporal.ChronoUnit;
+
 public class HeartRates {
 
 String firstName;
@@ -60,7 +65,33 @@ int yearOfBirth;
     return dateOfBirth;
   }
   
+  public void setdateOfBirth(){
+    this.dateOfBirth = dateOfBirth;
+  }
   
+  public int getmonthOfBirth(){
+    return monthOfBirth;
+  }
+  
+  public void setmonthOfBirth(){
+    this.monthOfBirth = monthOfBirth;
+  }
+  
+  public int getyearOfBirth(){
+    return yearOfBirth;
+  }
+  
+  public void setyearOfBirth(){
+    this.yearOfBirth = yearOfBirth;
+  }
+  
+  //Método que calcula a idade
+  public int calculateAge(int dateOBirth,int monthOfBirth,int yearOfBirth){
+  
+  LocalDate birthday = LocalDate.of(yearOfBirth,monthOfBirth,dateOfBirth);
+  LocalDate now = LocalDate.of(now.getYear, Month.OCTOBER, 11);
+  
+  }
   
   
   
