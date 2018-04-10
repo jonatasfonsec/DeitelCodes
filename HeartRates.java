@@ -10,9 +10,9 @@ First name, last name and date of birth (consisting of separate attributes for t
 Your class should have a constructor that receives this data as parameters.
 For each attribute provide set and get methods.
 The class also should includes:
--a method that calculates and returns the person’s age (in years): public int calculateAge(int dateOBirth,int monthOfBirth,int yearOfBirth)
+-a method that calculates and returns the person’s age (in years): public int calculateAge(int yearOfBirth)
 -a method that calculates and returns the person’s maximum heart rate: public int calculateMaximumHeartRate()
--a method that calculates and returns the person’s target heart rate: public int calculateTargetHeartRate()
+-a method that calculates and returns the person’s target heart rate: public double calculateTargetHeartRate()
 
 Write a Java app that prompts for the person’s information.
 Instantiates an object of class HeartRates and prints the information from that object—including the person’s:
@@ -85,11 +85,26 @@ int yearOfBirth;
     this.yearOfBirth = yearOfBirth;
   }
   
-  //Método que calcula a idade
-  public int calculateAge(int dateOBirth,int monthOfBirth,int yearOfBirth){
+  //Método que recebe o ano do nascimento e calcula a idade
+  public int calculateAge(int yearOfBirth){
+  //LocalDate birthday = LocalDate.of(yearOfBirth,monthOfBirth,dateOfBirth);
+  LocalDate now = LocalDate.now();
+  int actualYear = now.getYear();
+  int ageInYears = (actualYear - yearOfBirth); 
+  return ageInYears;
   
-  LocalDate birthday = LocalDate.of(yearOfBirth,monthOfBirth,dateOfBirth);
-  LocalDate now = LocalDate.of(now.getYear, Month.OCTOBER, 11);
+  public int calculateMaximumHeartRate(int ageInYears){
+  
+  int maxHeartRate = 220 - ageInYears;
+  return maxHeartRate;
+  }
+    
+  public double calculateTargetHeartRate(int maxHeartRate){
+  
+  int targHeartRate = 
+  
+  }
+    
   
   }
   
