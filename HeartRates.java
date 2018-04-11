@@ -12,7 +12,7 @@ For each attribute provide set and get methods.
 The class also should includes:
 -a method that calculates and returns the person’s age (in years): public int calculateAge(int yearOfBirth)
 -a method that calculates and returns the person’s maximum heart rate: public int calculateMaximumHeartRate()
--a method that calculates and returns the person’s target heart rate: public double calculateTargetHeartRate()
+-a method that calculates and returns the person’s target heart rate: public void calculateTargetHeartRate()
 
 Write a Java app that prompts for the person’s information.
 Instantiates an object of class HeartRates and prints the information from that object—including the person’s:
@@ -88,10 +88,9 @@ int yearOfBirth;
   return maxHeartRate;
   }
     
-  public double calculateTargetHeartRate(int maxHeartRate){
-  
-  int targHeartRate = 
-  
+  public void calculateTargetHeartRate(int maxHeartRate){
+    System.out.println("O valor mínimo do Heart Rate é: " + (maxHeartRate*(50/100)));
+    System.out.println("O valor máximo do Heart Rate é: " + (maxHeartRate*(85/100)));  
   }
     
   
