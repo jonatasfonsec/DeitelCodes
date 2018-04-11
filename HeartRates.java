@@ -29,9 +29,6 @@ range.
 */
 
 import java.time.LocalDate;
-import java.time.Month;
-import java.time.Period;
-import java.time.temporal.ChronoUnit;
 
 public class HeartRates {
 
@@ -45,45 +42,25 @@ int yearOfBirth;
   public HeartRates(String firstName, String lastName, int dateOfBirth, int monthOfBirth, int yearOfBirth){}
   
   //métodos Getters e Setters
-  public String getfirstName(){
-    return firstName;
-  }
+  public String getfirstName(){return firstName;}
     
-  public void setfirstName(){
-    this.firstName = firstName;
-  }
+  public void setfirstName(){this.firstName = firstName;}
   
-  public String getlastName(){
-    return lastName;
-  }
+  public String getlastName(){return lastName;}
     
-  public void setlastName(){
-    this.lastName = lastName;
-  }
+  public void setlastName(){this.lastName = lastName;}
   
-  public int getdateOfBirth(){
-    return dateOfBirth;
-  }
+  public int getdateOfBirth(){return dateOfBirth;}
   
-  public void setdateOfBirth(){
-    this.dateOfBirth = dateOfBirth;
-  }
+  public void setdateOfBirth(){this.dateOfBirth = dateOfBirth;}
   
-  public int getmonthOfBirth(){
-    return monthOfBirth;
-  }
+  public int getmonthOfBirth(){return monthOfBirth;}
   
-  public void setmonthOfBirth(){
-    this.monthOfBirth = monthOfBirth;
-  }
+  public void setmonthOfBirth(){this.monthOfBirth = monthOfBirth;}
   
-  public int getyearOfBirth(){
-    return yearOfBirth;
-  }
+  public int getyearOfBirth(){return yearOfBirth;}
   
-  public void setyearOfBirth(){
-    this.yearOfBirth = yearOfBirth;
-  }
+  public void setyearOfBirth(){this.yearOfBirth = yearOfBirth;}
   
   //Método que recebe o ano do nascimento e calcula a idade
   public int calculateAge(int yearOfBirth){
@@ -92,6 +69,18 @@ int yearOfBirth;
   int actualYear = now.getYear();
   int ageInYears = (actualYear - yearOfBirth); 
   return ageInYears;
+  
+ // O aniversário ocorreu este ano?
+ if ( monthOfBirth < now.getMonth() )
+  {
+    return ageInYears; // O aniversário ocorreu este ano
+  }
+ if ( monthOfBirth == now.getMonth() && dateOfBirth <= now.getDate())
+  {
+    return ageInYears; // O aniversário ocorreu este ano
+  }
+  return --ageInYears; // O aniversário ainda não ocorreu este ano
+ }
   
   public int calculateMaximumHeartRate(int ageInYears){
   
