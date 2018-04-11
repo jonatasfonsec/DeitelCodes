@@ -64,42 +64,30 @@ int yearOfBirth;
   
   //Método que recebe o ano do nascimento e calcula a idade
   public int calculateAge(int yearOfBirth){
-  //LocalDate birthday = LocalDate.of(yearOfBirth,monthOfBirth,dateOfBirth);
-  LocalDate now = LocalDate.now();
-  int actualYear = now.getYear();
-  int ageInYears = (actualYear - yearOfBirth); 
+      //LocalDate birthday = LocalDate.of(yearOfBirth,monthOfBirth,dateOfBirth);
+      LocalDate now = LocalDate.now();
+      int actualYear = now.getYear();
+      int ageInYears = (actualYear - yearOfBirth); 
   return ageInYears;
   
- // O aniversário ocorreu este ano?
- if ( monthOfBirth < now.getMonth() )
-  {
-    return ageInYears; // O aniversário ocorreu este ano
-  }
- if ( monthOfBirth == now.getMonth() && dateOfBirth <= now.getDate())
-  {
-    return ageInYears; // O aniversário ocorreu este ano
-  }
-  return --ageInYears; // O aniversário ainda não ocorreu este ano
- }
+ // Validação: O aniversário ocorreu este ano?
+    if ( monthOfBirth < now.getMonth() ){
+        return ageInYears; // O aniversário ocorreu este ano
+    }
+        if ( monthOfBirth == now.getMonth() && dateOfBirth <= now.getDate()){
+            return ageInYears; // O aniversário ocorreu este ano
+        }
+            return --ageInYears; // O aniversário ainda não ocorreu este ano
+ }// fim do método calculateAge
   
   public int calculateMaximumHeartRate(int ageInYears){
-  
-  int maxHeartRate = 220 - ageInYears;
-  return maxHeartRate;
-  }
+    int maxHeartRate = 220 - ageInYears;
+    return maxHeartRate;
+  }//fim do método calculateMaximumHeartRate
     
   public void calculateTargetHeartRate(int maxHeartRate){
     System.out.println("O valor mínimo do Heart Rate é: " + (maxHeartRate*(50/100)));
     System.out.println("O valor máximo do Heart Rate é: " + (maxHeartRate*(85/100)));  
-  }
-    
+  }//fim do método calculateTargetHeartRate
   
-  }
-  
-  
-  
-  
-  
-
-
-}
+}// fim da classe HeartRates.java
